@@ -1,12 +1,22 @@
 import React from 'react'
 
-import AllDog from '../AllDog/AllDog.container'
+import AllDog from '../../components/Dog/AllDog.component'
 
-export default function Dog() {
+//!redux
+import Connect from '../../Hoc/Connect.hoc';
+import { addDog } from '../../shared/Redux/Actions/dog.actions'
 
+function Dog({dispatch}) {
+  
+  const saveUrlDog= (urlDog) =>{
+    dispatch(addDog(urlDog));
+
+  }
   return (
     <div>
-      <AllDog/>
+      <AllDog saveUrlDog={saveUrlDog}/>
     </div>
   )
 }
+
+export default Connect(Dog);
