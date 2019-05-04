@@ -1,4 +1,3 @@
-//import axios from 'axios'
 const urldog = 'https://dog.ceo/api/';
 
 
@@ -13,9 +12,8 @@ export async function ApiListDog(){
   const resJson = await res.json();
   return resJson;
 }
-
-export async function ApiFindImgDog(breeds, count){
-  const res = await fetch(`${urldog}breed/${breeds}/images/random/${count}`)
+export async function ApiFindImgDog(){
+  const res = await fetch(`${urldog}breed/hound/images`)
   const resJson = await res.json();
   return resJson;
 
